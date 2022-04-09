@@ -3,7 +3,7 @@ create database musikshop with owner kumova;
 create table if not exists Musician ( 
       Id serial primary key,
       nickname varchar(40) not null,
-      genre_id integer
+      genre_id integer  References Genre (id)
       );
 
 create table if not exists Album (
@@ -22,6 +22,5 @@ create table if not exists Track (
     
 create table if not exists Genre ( 
      Id serial primary key, 
-     name_genre varchar(40) not null,
-     musician_id integer References Musician(genre_id)
+     name_genre varchar(40) not null
 ); 
